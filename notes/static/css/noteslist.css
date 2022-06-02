@@ -1,0 +1,90 @@
+h2 a{
+    color: #C25100;
+    font-family: 'Lobster';
+}
+
+.page-header {
+    background-color: #C25100;
+    margin-top: 0;
+    margin-bottom: 40px;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1,
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Lobster', cursive;
+}
+
+.date {
+    color: #828282;
+}
+
+a1{
+    color: #ffffff;
+}
+
+.save {
+    float: right;
+}
+
+.note-form textarea,
+.note-form input {
+    width: 100%;
+}
+
+.top-menu,
+.top-menu:hover,
+.top-menu:visited {
+    color: #ffffff;
+    font-size: 26pt;
+    margin-left: 100px;
+}
+
+.note {
+    margin-bottom: 70px;
+}
+
+.note h2 a,
+.note h2 a:visited {
+    color: #000000;
+}
+
+.note > .date,
+.note > .actions {
+    float: right;
+}
+
+.btn-secondary,
+.btn-secondary:visited {
+    color: #C25100;
+    background: none;
+    border-color: #C25100;
+}
+
+.btn-secondary:hover {
+    color: #FFFFFF;
+    background-color: #C25100;
+}
+
+#signup{
+    color:#000000;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+#signup:hover{
+    text-decoration: underline;
+    color:#C25100;
+
+}

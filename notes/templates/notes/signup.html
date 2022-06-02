@@ -1,0 +1,15 @@
+{% extends 'notes/base.html' %}
+
+{% block heading %}
+<h1><a href="/">Welcome to Notify - New User</a></h1>
+
+{% endblock %}
+
+        {% block content %}
+        <h2>Sign Up</h2>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-secondary">Create an Account</button>
+        </form>
+        <e>{{error}}</e>
+        {% endblock %}

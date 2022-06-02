@@ -1,0 +1,22 @@
+{% extends 'notes/base.html' %}
+
+{% block heading %}
+<h1><a href="/">Create a Note</a></h1>
+
+<a href="{% url 'noteshomeroute' %}" class="top-menu">
+    {% include './icons/window.svg' %}
+</a>
+<a1>View All</a1>
+<a href="{% url 'signout' %}" class="top-menu">
+    {% include './icons/arrow-90deg-left.svg' %}
+</a>
+<a1>Log Out</a1>
+{% endblock %}
+
+        {% block content %}
+        <h2>New Note</h2>
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-secondary">Save</button>
+        </form>
+        {% endblock %}

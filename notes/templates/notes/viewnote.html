@@ -1,0 +1,34 @@
+{% extends 'notes/base.html' %}
+
+{% block heading %}
+<h1><a href="/">Notify</a></h1>
+<a href="{% url 'newnote' %}" class="top-menu">
+    {% include './icons/file-earmark-plus.svg' %}
+</a>
+<a1>Create</a1>
+<a href="{% url 'noteshomeroute' %}" class="top-menu">
+    {% include './icons/window.svg' %}
+</a>
+<a1>View All</a1>
+<a href="{% url 'signout' %}" class="top-menu">
+    {% include './icons/arrow-90deg-left.svg' %}
+</a>
+<a1>Log Out</a1>
+{% endblock %}
+
+        {% block content %}
+        <article>
+            <h2><a href="">{{note.title}}</a>
+            <aside class="actions">
+                <a class="btn btn-secondary" href="{% url 'changenote' pk=note.pk %}">
+                  {% include './icons/pencil-fill.svg' %}
+                </a>
+                <a class="btn btn-secondary" href="{% url 'deletenote' pk=note.pk %}">
+                    {% include './icons/trash.svg' %}
+                  </a>
+            </aside></h2>
+            <time>Last Saved: {{note.save_date}}</time>
+            <a>Tags: {{note.tags}}</a>
+            <p>{{ note.text|linebreaksbr }}</p>
+        </article>
+        {% endblock %}

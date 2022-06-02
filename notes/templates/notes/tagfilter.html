@@ -1,0 +1,32 @@
+{% extends 'notes/base.html' %}
+
+{% block heading %}
+<h1><a href="/">Notify-Your Notes</a></h1>
+<a href="{% url 'newnote' %}" class="top-menu">
+    {% include './icons/file-earmark-plus.svg' %}
+</a>
+<a1>Create</a1>
+<a href="{% url 'noteshomeroute' %}" class="top-menu">
+    {% include './icons/window.svg' %}
+</a>
+<a1>View All</a1>
+<a href="{% url 'signout' %}" class="top-menu">
+    {% include './icons/arrow-90deg-left.svg' %}
+</a>
+<a1>Log Out</a1>
+{% endblock %}
+
+        {% block content %}
+        <form method="POST" class="post-form">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-secondary">Search</button>
+        </form>
+        {% for note in notelist %}
+        <article>
+            <h2><a href="{% url 'singlenote' pk=note.pk %}">{{note.title}}</a></h2>
+            <time>Last Saved: {{note.save_date}}</time>
+            <a>Tags: {{note.tags}}</a>
+            <p>{{ note.text|linebreaksbr }}</p>
+        </article>
+        {% endfor %}
+        {% endblock %}
